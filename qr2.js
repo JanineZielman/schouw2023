@@ -9,11 +9,11 @@ async function fetchText() {
       for (let t = 0; t < tables.length; t++) { 
         const qrcode = document.createElement("div");
         qrcode.classList.add("qrcode");
-        qrcode.setAttribute('id', tables[t].children[1].children[0].cells[1].innerHTML.replaceAll(' ', '_'));
-				qrcode.innerHTML = tables[t].children[1].children[0].cells[1].innerHTML;
+        qrcode.setAttribute('id', tables[t].children[1].children[0].cells[1].innerText.replaceAll(' ', '_').replaceAll('ë', 'e').replaceAll('é', 'e').replaceAll('á', 'a').replaceAll('í', 'i'));
+				qrcode.innerHTML = tables[t].children[1].children[0].cells[1].innerText;
         document.body.appendChild(qrcode)
 				setTimeout(() => {
-					new QRCode(document.getElementById(tables[t].children[1].children[0].cells[1].innerHTML.replaceAll(' ', '_')), `https://janinezielman.github.io/schouw2023/year2#${tables[t].children[1].children[0].cells[1].innerHTML.replaceAll(' ', '_').slice(0, 10)}`);
+					new QRCode(document.getElementById(tables[t].children[1].children[0].cells[1].innerText.replaceAll(' ', '_').replaceAll('ë', 'e').replaceAll('é', 'e').replaceAll('á', 'a').replaceAll('í', 'i')), `https://janinezielman.github.io/schouw2023/year2#${tables[t].children[1].children[0].cells[1].innerHTML.replaceAll(' ', '_').replaceAll('ë', 'e').replaceAll('é', 'e').replaceAll('á', 'a').replaceAll('í', 'i').slice(0, 10)}`);
 				}, "1000")
       }
     }
