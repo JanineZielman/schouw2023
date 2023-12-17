@@ -12,7 +12,7 @@ async function fetchText() {
       for (let t = 0; t < tables.length; t++) { 
         const wrapper = document.createElement("div");
         wrapper.classList.add("wrapper");
-        wrapper.setAttribute('id', tables[t].children[1].children[0].cells[1].innerText.replaceAll(' ', '_').replaceAll('ë', 'e').replaceAll('é', 'e').replaceAll('á', 'a').replaceAll('í', 'i').slice(0, 10));
+        wrapper.setAttribute('id', tables[t].children[1].children[0].cells[1].innerText.replaceAll(' ', '_').replaceAll('ë', 'e').replaceAll('é', 'e').replaceAll('á', 'a').replaceAll('í', 'i').replaceAll('ö', 'o').slice(0, 10));
         document.body.appendChild(wrapper);
         for (let i = 0; i < tables[t].children[1].children.length; i++) {
           for (let j = 1; j < tables[t].children[1].children[i].cells.length; j++) {
